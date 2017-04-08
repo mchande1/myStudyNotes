@@ -1,0 +1,98 @@
+<div stype="width: 100% !important">
+                    
+                
+                <apex:dataTable value="{!opWrapperList}" rendered="{!displayPbTable}" var="jobOp" border="1" width="100%">
+                		<apex:column >
+                            <apex:facet name="header">isSelected</apex:facet>
+                            <apex:selectCheckboxes value="{!jobOp.opSelected}"    />
+                        </apex:column>   
+                        <apex:column >
+                            <apex:facet name="header">Product</apex:facet>
+                            <apex:outputField value="{!jobOp.jop.SKU_Operation__r.SKU__r.Name}" />
+                        </apex:column> 
+                        <apex:column >
+                            <apex:facet name="header">Job</apex:facet>
+                            <apex:outputField value="{!jobOp.jop.Job__r.Name}"    />
+                        </apex:column> 
+                        <apex:column >
+                            <apex:facet name="header">Job Operation</apex:facet>
+                            <apex:outputField value="{!jobOp.jop.Name}"    />
+                        </apex:column> 
+                        <apex:column >
+                            <apex:facet name="header">Quantity</apex:facet>
+                            <apex:outputField value="{!jobOp.jop.Job__r.Quantity__c}" />
+                        </apex:column> 
+                        <apex:column >
+                            <apex:facet name="header">Delivery Date</apex:facet>
+                            <apex:outputField value="{!jobOp.jop.Job__r.Order_SKU__r.Order.Exp_Delv_Date__c}"    />
+                        </apex:column> 
+                        <apex:column >
+                            <apex:facet name="header">Tool 1</apex:facet>
+                            <apex:inputField value="{!jobOp.jop.Tool__c}"    />
+                        </apex:column>    
+                        <apex:column >
+                            <apex:facet name="header">Tool 2</apex:facet>
+                            <apex:inputField value="{!jobOp.jop.Tool_2__c}"    />
+                        </apex:column>  
+                        <apex:column >
+                            <apex:facet name="header">Tool 3</apex:facet>
+                            <apex:inputField value="{!jobOp.jop.Tool_3__c}"    />
+                        </apex:column>  
+                        <apex:column >
+                            <apex:facet name="header">Start Time</apex:facet>
+                            <apex:inputField value="{!jobOp.jop.Start_Time__c}"    />
+                        </apex:column>  
+                        <apex:column width="50px">
+                            <apex:facet name="header">End Time</apex:facet>
+                            <apex:inputField value="{!jobOp.jop.End_Time__c}"    />
+                        </apex:column>  
+                </apex:dataTable>
+                </div>    
+            <!--    <div style="max-width:98% !important;overflow-x: hidden;">
+                    <apex:pageBlockTable value="{!opWrapperList}" title="Job Operations" var="jobOp" id="pbTable"   width="100%">
+                        <apex:column >
+                            <apex:facet name="header">isSelected</apex:facet>
+                            <apex:selectCheckboxes value="{!jobOp.opSelected}"    />
+                        </apex:column>   
+                        <apex:column >
+                            <apex:facet name="header">Product</apex:facet>
+                            <apex:outputField value="{!jobOp.jop.SKU_Operation__r.SKU__r.Name}" />
+                        </apex:column> 
+                        <apex:column >
+                            <apex:facet name="header">Job</apex:facet>
+                            <apex:outputField value="{!jobOp.jop.Job__r.Name}"    />
+                        </apex:column> 
+                        <apex:column >
+                            <apex:facet name="header">Job Operation</apex:facet>
+                            <apex:outputField value="{!jobOp.jop.Name}"    />
+                        </apex:column> 
+                        <apex:column >
+                            <apex:facet name="header">Quantity</apex:facet>
+                            <apex:outputField value="{!jobOp.jop.Job__r.Quantity__c}" />
+                        </apex:column> 
+                        <apex:column >
+                            <apex:facet name="header">Delivery Date</apex:facet>
+                            <apex:outputField value="{!jobOp.jop.Job__r.Order_SKU__r.Order.Exp_Delv_Date__c}"    />
+                        </apex:column> 
+                        <apex:column >
+                            <apex:facet name="header">Tool 1</apex:facet>
+                            <apex:inputField value="{!jobOp.jop.Tool__c}"    />
+                        </apex:column>    
+                        <apex:column >
+                            <apex:facet name="header">Tool 2</apex:facet>
+                            <apex:inputField value="{!jobOp.jop.Tool_2__c}"    />
+                        </apex:column>  
+                        <apex:column >
+                            <apex:facet name="header">Tool 3</apex:facet>
+                            <apex:inputField value="{!jobOp.jop.Tool_3__c}"    />
+                        </apex:column>  
+                        <apex:column >
+                            <apex:facet name="header">Start Time</apex:facet>
+                            <apex:inputField value="{!jobOp.jop.Start_Time__c}"    />
+                        </apex:column>  
+                        <apex:column width="50px">
+                            <apex:facet name="header">End Time</apex:facet>
+                            <apex:inputField value="{!jobOp.jop.End_Time__c}"    />
+                        </apex:column>  
+                    </apex:pageBlockTable>
+                </div>  -->

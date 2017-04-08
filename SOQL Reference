@@ -1,0 +1,77 @@
+select count_distinct(Name) from Account
+
+select count() from Account
+
+select sum(Amount) from opportunity
+
+select Min(Amount) from Opportunity
+
+select count(Id), count(CampaignId) from Opportunity
+
+Id accId = [select Order.AccountId from OrderItem where Id = '8026F000000WwUO'][0].Order.AccountId;
+Account acc = [select id, name from Account where Id =: accId];
+System.debug(acc);
+
+select id, Name, (select id, Name, SKU__c from Account_SKUs__r) from Account
+
+select id, Product2Id, Variance__c, OrderId from OrderItem where Order.Status = 'Draft'
+
+select Avg(Variance__c), Account_SKU__c from OrderItem where variance__c > 0 Group By Account_SKU__c
+
+select SUM(Quantity), SUM(Actual_Quantity__c), Product2Id from OrderItem where Order.Status NOT IN ('Completed','Cancelled') and   Order.RecordType.Name = 'Purchase Order' Group By Product2Id 
+
+select id, Order.Name, Product2.Name from OrderItem where Product2Id = '01t6F000006mB2v' and Order.RecordType.Name = 'Purchase Order' and Order.Status != 'Completed' and Order.Status != 'Cancelled' 
+
+select count() from OrderItem where Order.RecordType.Name = 'Purchase Order' and Product2Id = '01t6F000006mB2v' and (Order.Status != 'Completed' or Order.Status != 'Cancelled')
+
+select id, Name, Status from ApexTrigger
+
+List<AggregateResult> groupedResult = [select SUM(Quantity)orderedQty, SUM(Actual_Quantity__c)actualQty, Product2.Id from OrderItem 
+                                       where Order.Status NOT IN ('Completed','Cancelled') and   
+                                       Order.RecordType.Name = 'Purchase Order' and Product2Id = '01t6F000006mB2v'
+                                       Group By Product2.Id];
+
+for(AggregateResult ar: groupedResult){
+    System.debug('OrderedQty: ' + ar.get('orderedQty') + '\n' +
+                 'ActualQty: ' + ar.get('actualQty'));    
+}
+
+//This is a query on custom object - Query is just similar to a normal soql query
+select Name, Switch__c from Trigger_Switch__c
+
+select id, Name, (select Id, Price__c, Old_Rate__c, SKU__c, SKU__r.Name, Rate_changed_date__c from Account_SKUs__r) from Account where Id = '0016F00001whQHK'
+
+to get the count of the number of orderlineItems per product
+select Product2.Name, count(Id) from OrderItem group by Product2.Name
+
+To get the max and min amount
+select Product2.Name, Max(Amount__c), Min(Amount__c) from OrderItem Group by Product2.Name
+
+select Product2.Name, sum(Quantity), Max(Quantity) from OrderItem Group by Product2.Name
+
+select Product2.Name, sum(Quantity), Max(Quantity), Avg(Quantity), Min(Quantity), count(Id) from OrderItem Group by Product2.Name
+
+select count_distinct(Product2Id) from OrderItem
+
+sums up the subtotals returned
+select Leadsource, count(Id) from Lead group by rollup(leadsource)
+
+select Product2.Name, Max(Quantity) from OrderItem Group by Product2.name having max(Quantity) > 100
+
+select Product2.Name, OrderItemNumber from OrderItem where Product2.Name Like '%Chun%'
+
+select id, Name, (select Id, Name, Total_Stock__c from Inventories__r where RecordType.Name = 'Master Inventory') from Product2 
+
+select Id, LeadId, CampaignId from campaignMember
+
+select id, Name from Opportunity order by CreatedDate desc
+
+select id from contact where accountid not in  (select id from account)
+
+select Id, Name, IsActive, IsStandard from Pricebook2
+
+select id, Name, Job_Type__c, Order_SKU__c, Quantity__c, Status__c, (Select id, Name, Inventory_Unit__c, Inventory_Unit__r.Name, Status__c, Shipment_Status__c from Job_Operations__r where Status__c = 'In Progress'  ORDER BY step__c DESC NULLS LAST) from Job__c where Order_SKU__c != null and status__c = 'In Progress'
+
+select Name, Inventory_unit__r.Name, Step__c from Job_Operation__c where Job__c = 'a0A6F00000iDToZ' Order by Step__c Desc Nulls last
+
+

@@ -1,0 +1,911 @@
+Directory - In computing, a directory is a file system cataloging structure which contains references to other computer files, and possibly other directories. in simple terms folder
+
+Catalogue: a complete list of items, typically one in alphabetical or other systematic order
+
+host: a person who receives or entertains other people as guests.
+party-giver, entertainer
+the host greeted the new guests
+
+A network host is a computer or other device connected to a computer network. A network host may offer information resources, services, and applications to users or other nodes on the network
+
+The Force.com Migration Tool is a Java/Ant-based command-line utility for moving metadata between a local directory and a Salesforce org. Use the Force.com Migration Tool to perform repetitive deployments that can be scripted and that use the same components (the same package.xml file)
+
+foster: encourage the development of (something, especially something desirable).
+"the teacher's task is to foster learning"
+
+Version Control System (VCS) is a software that helps software developers to work together and maintain a complete history of their work
+
+Following are the goals of a Version Control System.
+
+Allow developers to work simultaneously.
+Do not overwrite each other’s changes.
+Maintain history of every version of everything.
+
+Subversion falls under centralized version control system, meaning that it uses central server to store all files and enables team collaboration.
+
+trunk: the main woody stem of a tree as distinct from its branches and roots
+
+Commit is an atomic operation. Either the whole commit succeeds or is rolled back. Users never see half finished commit.
+
+Atomic operation: Either they succeed or they fail
+
+Subversion is a popular open-source version control tool
+
+synchronize: cause to occur or operate at the same time or rate.
+"soldiers used watches to synchronize movements"
+their breathing slowly synchronized
+
+artefact: an object made by a human being, typically one of cultural or historical interest.
+"gold and silver artefacts"
+Deployment Artifacts
+
+An independent software vendor (ISV) is an organization specializing in making and selling software, designed for mass or niche markets. This is in contrast to software developed for in-house use only within an organization or software designed or adapted for a single, specific customer
+
+niche: comfortable or suitable position
+he has found his niche in life
+syno: ideal position
+
+unmanaged Package: A collection of application components that can be distributed and installed in other orgs.
+
+Managed Package: A collection of application components with a namespace that can be distributed and installed in other orgs. Managed packages can be listed on the AppExchange and are upgradeable.
+
+Manifest: clear or obvious to the eye or mind.
+her manifest charm and proven ability
+his manifest lack of interest in the proceedings
+syno: obvious and clear
+
+A deployment profile consists of a zip file containing metadata components and a package.xml file. The package.xml file is a manifest that lists everything being sent from the source org to the destination org
+
+For example, if you’re using the Force.com IDE, the package.xml is assembled from the components you select when you create a project
+
+The exception is if you use the Force.com Migration Tool or Workbench. In this case, you create package.xml files for retrieval (the files you bring to a local file system) and deployment (the files you send back to the server). It’s often easier to create a project in the Force.com IDE and then copy package.xml and use the copy for the Force.com Migration Tool.
+
+When using change sets, you don’t see the package.xml file. It all happens behind the scenes. When you deploy change sets, the zip file of components and the manifest are handled seamlessly behind the scenes
+
+The Force.com Migration Tool uses a project manifest, a file that’s named package.xml. The manifest is an XML file that defines the components you’re migrating and specifies the version of the Metadata API to use
+
+Manifest: a document listing a ship's contents, cargo, passengers, and crew, for the use of customs officers
+
+Take a look at the following package.xml file. The <name> specifies a metadata type, in this case, CustomObject. The <members> is a list of one or more components of that type. In this case, it lists two custom objects, Invoice__c and Line_Item__c
+
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Invoice__c</members>
+        <members>Line_Item__c</members>
+        <name>CustomObject</name>
+    </types>
+    <version>38.0</version>
+</Package>
+
+retrive: get or bring (something) back from somewhere
+I was sent to retrive the balls from the garden
+
+To retrieve all members of a type, you use the wildcard (*) character instead.
+
+    <types>
+        <members>*</members>
+        <name>CustomObject</name>
+    </types>
+
+
+** Migrating Metadata Components
+
+Migrating files between environments requires first copying metadata from one org to a local file system. You then transfer the metadata from the local files to another org. Several factors determine how long this operation can take.
+
+You might be wondering why you need to store files to a local system to migrate files that are stored in the cloud. The Metadata API supports traditional software development tools that operate on source files, such as text editors, diff/merge utilities, and version control systems, all of which require a local file system. After you retrieve the metadata components locally, you can deploy them directly to any other org, including production. You don’t need to retrieve the components again for each deployment, unless when you want to get a fresh copy of the metadata.
+
+You can monitor deployments that are in progress, check which deployments are waiting for execution, and view the results of completed deployments on the Deployment Status page. This page lists all deployments—change sets, Metadata API-based deployments, including deployments started from the Force.com IDE and the Force.com Migration Tool, and package installations.
+
+In the deployment status we can we see how many components have been successfully deployed and how many have errored out
+
+Once all the components are successfully deployed my test cases will start executing and can monitor the number of test cases passed vs number of test cases failed
+
+You can initiate multiple deployments. Only one deployment can run at a time. The other deployments will remain in the queue waiting to be executed after the current deployment finishes
+
+Administrators can’t delete components using change sets. As a result, they might resort to such tactics as deploying empty Apex classes to remove old functionality. This isn’t a particularly elegant solution, but it works well enough for admins that don’t have other means at their disposal.
+
+To delete components, use the same procedure as for deploying components, but also include a delete manifest file named destructiveChanges.xml listing the components to delete. The file format is the same as package.xml, except that wildcards aren’t supported.
+
+
+destructiveChangesPre.xml - to delete the components before adding any components
+destructiveChangesPost.xml - to delete components after adding some components
+
+When you deploy customizations with Apex code to production, local Apex tests are run as part of the deployment. Local Apex tests consist of all tests in the target org that don’t originate from managed packages. Testing in deployments helps ensure that the deployed components don’t alter or break existing customizations in production. Testing lets you catch and fix issues before the customizations are rolled out to production
+
+Quick deployments cut down on deployment time by running tests as part of validations. Test levels give you the power to decide how many tests to run in the target org.
+
+Roll out your customizations to production faster by running tests as part of validations and skipping tests in your deployments. Because quick deployments don’t run tests, they’re faster than regular deployments
+
+we recommend that you first run a validation in production to verify the results of your tests and fix test failures. A validation is a deployment that’s used only to check the results of deploying components. It doesn’t save any components in the org. You can view the success and failure messages that you would receive with an actual deployment. After you fix test failures, and all tests pass as part of the validation, you can run a quick deployment, which skips tests and saves time.
+
+To perform a quick deployment, first run a validation (a check-only deployment) with Apex test execution on the set of components to deploy. If your validation succeeds and qualifies for a quick deployment, you can start a quick deployment.
+
+In traditional software development you have a code stack that represents the “source of truth”. This source resides in a version control system, and is iteratively developed and succeeded by new versions, or rolled back to previous versions
+
+Sometimes new features are branched, meaning one code line forks off for more isolation from the main code line, and then oftentimes the branches are merged back into to the main line when that feature is ready
+
+In cloud computing, the source of truth is what’s on the production org
+
+version control repository only copies the code and metadata types that are exposed in the Metadata API. This means you can create things in a development environment (sandbox, developer org) that can’t be stored in source control
+
+regulatory: serving or intended to regulate something.
+"the existing legal and regulatory framework"
+
+A source control system ensures a quality development process by maintaining a separate branch for each project without overwriting changes made as part of other projects
+
+Team members and developers on other teams can add changes to the source control repository. The repository integrates the changes implemented by concurrent development and separates the different versions of an application.
+
+Partial Copy
+Partial Data sandboxes include all of your organization’s metadata and add a selected amount of your production organization's data that you define using a sandbox template
+
+Developer Sandbox
+REFRESH LIMIT    :-  Daily
+DATA LIMIT          :-  200MB
+
+Developer Pro Sandbox
+REFRESH LIMIT    :-  Daily
+DATA LIMIT          :-  1GB
+
+Partial Copy
+REFRESH LIMIT    :-  5 Days
+DATA LIMIT          :-  5GB
+
+Full Sandbox
+REFRESH LIMIT    :-  29 Days
+DATA LIMIT          :-  Same as Production
+
+Continuous Integration System
+
+For a robust quality assurance process, use a continuous integration system to run test deployments and Apex tests for each change to the source control repository. You can perform these deployments in a dedicated sandbox for continuous integrations.
+
+Non-configuration changes, such as creating views, reports, and dashboards, can be made safely in production
+
+Application lifecycle management is the process of managing an app’s development, from design to final release, and establishing a framework for managing changes
+
+In Salesforce, development and test environments are represented by sandboxes. A sandbox is essentially a clone of your production org—its features, functionality, user licenses, and setup configuration. Sandboxes are usually used for development, testing, training, and merging changes from other sandboxes.
+
+depricate: express disapproval of.
+"what I deprecate is persistent indulgence"
+Standard methods for deprecating classes and fields
+
+When you have multiple developers in multiple sandboxes, you need to merge changes between the sandboxes before you deploy, which requires an integration sandbox
+
+The source control system hosts the metadata (which includes source code) of projects in development in separate branches. When the app is deployed to production, it’s deployed from the source control system
+
+Use a source control repository, such as git, for team development. Using an external source control repository enables merging changes from multiple developers. Also, the repository allows isolation of projects that are in development. The source control repository is the source for all customizations deployed to all other environments. After the changes have been tested and validated in the various environments, a test deployment is made to the staging environment. If the deployment succeeds, the changes are migrated to production
+
+Full sandboxes are required only for performance and scalability testing, as well as for staging before final deployment
+
+Creating or refreshing a sandbox doesn’t happen via the Metadata API, so the components copied aren’t restricted to objects that have XML representations. Therefore, you get a true and complete copy of everything in the production org.
+
+Sandbox templates are available only in a Partial Copy or Full sandbox
+
+If you have a Partial Copy or Full sandbox, you can pick which standard and custom objects to copy over from production by using sandbox templates. Sandbox templates help you limit the size of your sandbox by limiting the data that is copied over
+
+
+A sandbox preview window occurs right before the upgrade so that you can try out new features before your production organization is upgraded. For a brief time, your sandbox and production organizations could be running different versions of Salesforce.
+
+Metadata type: A representation of configurations and customizations in Salesforce and is in XML format.
+
+************************************************************************************************************
+
+04/12/2016
+
+embed: fix (an object) firmly and deeply in a surrounding mass.
+he had an operation to remove a nail embedded in his chest
+implant, insert, fix
+
+computing meaning
+incorporate (a text or code) within the body of a file or document.
+this is the standard way of embedding data in your program
+
+Chatter is a Salesforce collaboration application that connects, engages, and motivates users to work efficiently across the organization regardless of role or location. Chatter lets users collaborate on sales opportunities, service cases, campaigns, and projects with embedded apps and custom actions
+
+intutive: using or based on what one feels to be true even without conscious reasoning; instinctive.
+"his intuitive understanding of the readers' real needs"
+
+retroactive: (especially of legislation) taking effect from a date in the past.
+a big retroactive tax increase
+
+such a trigger would not act retroactively - meaning the records which are updated/inserted now will have the changes but the records that are already present would not have any effect.
+
+Global Constant—choose a global constant to set a value to null or an empty string—for example, choose $GlobalConstant.Null.
+
+******************************************
+
+reconciliation: the restoration of friendly relations.
+"his reconciliation with your uncle"
+synonyms:   reuniting, reunion, bringing (back) together (again)
+
+remittance: a sum of money sent in payment or as a gift.
+"complete your booking form and send it together with your remittance"
+remittance may be made by credit card
+synonyms:   payment, settlement, money, fee
+
+ENTITLEMENT IS A RIGHT TO ACCESS A BENEFIT OR SERVICE
+entitlement: the fact of having a right to something
+syno: right, claim 
+
+The best way to look at entitlements is as a link between products you sell and services you deliver
+
+warehouse: a large building where raw materials or manufactured goods may be stored prior to their distribution for sale.
+syno: store room
+
+premium: an amount to be paid for a contract of insurance.
+synonyms:   insurance charge, insurance payment, regular payment, instalment
+"a 25-year policy with monthly premiums of £30"
+
+**********************************************
+
+06/12/2016
+
+The Archive Options page allows you to save a snapshot of the project and the destination organization, respectively, before any changes are made. If you are deploying to a production organization, archive your destination organization to facilitate recovery, in the unlikely event that this is needed. The archive options save a snapshot of the project and the destination organization, respectively, before any changes are made. This facilitates recovery if needed. For deployments to production organizations, you should select both archive options.
+
+Project archive Select to create an archive of your project (local files).
+Destination archive Select to create an archive of the destination files (files on the server)
+
+A report is a list of records that meet the criteria you define. It’s displayed in Salesforce in rows and columns, and can be filtered, grouped, or displayed in a graphical chart.
+
+Every report is stored in a folder. Folders can be public, hidden, or shared, and can be set to read-only or read/write. You control who has access to the contents of the folder based on roles, permissions, public groups, and license types. You can make a folder available to your entire organization, or make it private so that only the owner has access
+
+A dashboard is a visual display of key metrics and trends for records in your org. The relationship between a dashboard component and report is 1:1; for each dashboard component, there is a single underlying report. 
+
+Multiple dashboard components can be shown together on a single dashboard page layout, creating a powerful visual display and a way to consume multiple reports that often have a common theme, like sales performance, customer support, etc.
+
+Each dashboard has a running user, whose security settings determine which data to display in a dashboard. If the running user is a specific user, all dashboard viewers see data based on the security settings of that user—regardless of their own personal security settings. For this reason, you’ll want to choose the running user wisely, so as not to open up too much visibility. For example, set the Sales Manager as the running user for a leaderboard for her team. This allows her team members to view the leaderboard for their individual team, but not other teams.
+
+Dynamic dashboards are dashboards for which the running user is always the logged-in user. This way, each user sees the dashboard according to his or her own access level. If you’re concerned about too much access, dynamic dashboards might be the way to go.
+
+A report type is like a template which makes reporting easier. The report type determines which fields and records are available for use when creating a report
+
+Custom labels are custom text values that can be accessed from Apex classes, Visualforce pages, or Lightning components. The values can be translated into any language Salesforce supports. Custom labels enable developers to create multilingual applications by automatically presenting information (for example, help text or error messages) in a user's native language.
+
+hone: sharpen (a blade).
+"he was carefully honing the curved blade"
+syno: to sharp a blade
+
+use quick find and filters to hone in the fields you want
+
+window.location.reload(); 
+used to reload the page
+
+var url = 'http://www.google.com'
+window.open( url); 
+
+
+{!REQUIRESCRIPT("/soap/ajax/38.0/connection.js")} 
+{!REQUIRESCRIPT("/soap/ajax/38.0/apex.js")} 
+alert("Cashier will generate the receipt and give the receipt to the customer");
+var orderID = "{!Order.Id}";
+sforce.apex.execute("shringarDemo", "generateReceipt",{orderID : orderID}); 
+window.location.reload();
+
+
+IF(Net_Rent__c + Damage_Charges__c  - (Amount_Recieved__c + Actual_Deposit__c)>=0, Net_Rent__c + Damage_Charges__c  +  Expected_Deposit__c  - (Amount_Recieved__c + Actual_Deposit__c) ,0)
+
+invoice: a list of goods sent or services provided, with a statement of the sum due for these; a bill
+syno: bill, charge
+we'll invoice you for the damage
+
+Overriding standard buttons and links changes the meaning of the salesforce.com URL and any calls to that URL such as a salesforce.com page, a browser shortcut, or an external system. You can replace the salesforce.com URL for a standard button or link with a custom s-control or Visualforce Page.
+
+Report is subset of the data or the summary of the data
+
+Custom report types allow you to build a framework in the report wizard, from which users can create and customize reports
+
+joined reports can accomidate more than one reports of different type
+
+Components have two basic entities
+components: are basically different type of charts
+Data source: is the reports
+
+fieldset:
+
+palette: a thin board or slab on which an artist lays and mixes colours
+
+intangable: unable to be touched; not having physical presence
+the moonlight made things seem intangible
+difficult or impossible to define or understand; vague and abstract.
+"the rose symbolized something intangible about their relationship"
+
+patent: a government authority or licence conferring a right or title for a set period, especially the sole right to exclude others from making, using, or selling an invention.
+an invention is not your own until it is patented
+syno: copyright, licence,
+
+tangible : perceptible by touch
+the atmosphere of neglect and abandonment was almost tangible
+solid, concrete;
+clear and definite; real.
+"the emphasis is now on tangible results
+
+
+perceptible: (especially of a slight movement or change of state) able to be seen or noticed
+a perceptible decline in public confidence
+syno: noticeable
+
+***visualflow***
+Faults are exceptions that can happen during the processing of the flow
+
+using count in soql query
+Select count() FROM Candidate__c WHERE Source__c = 'Indirect' AND Recruiting_Partner__c = '' 
+
+*********************************************
+
+Community Builder lets you easily brand your community, create and customize pages, add drag-and-drop Lightning components, create custom navigation, and manage your community's pages
+
+To customize a flow’s look and feel or enhance its functionality, embed it in a Visualforce page. If your org has flows enabled for sites and portals, use the Visualforce page to deliver the flow to your Force.com site, portal, or community.
+
+The source code must be compiled into machine code in order to become and executable program. ... A compiled program can be opened and run by a user. When an application is running, it is called runtime. The terms "runtime" and "compile time" are often used by programmers to refer to different types of errors
+
+to refer a flow variable at run time use the getVariableValue method in the Flow.Interview
+
+myFlow.getVariableValue('vaBreadCrumb');
+
+Cracking the Coding Interview Paperback – 2015
+Programming Interviews Exposed: Secrets to Landing Your Next Job (WROX) Paperback – 13 Dec 2012
+
+****************************************************************************************************************
+
+Whenever your web browser fetches a file (a page, a picture, etc) from a web server, it does so using HTTP - that's "Hypertext Transfer Protocol". HTTP is a request/response protocol, which means your computer sends a request for some file
+
+The Hypertext Transfer Protocol (HTTP) is designed to enable communications between clients and servers.
+
+HTTP works as a request-response protocol between a client and server.
+
+A web browser may be the client, and an application on a computer that hosts a web site may be the server.
+
+Example: A client (browser) submits an HTTP request to the server; then the server returns a response to the client. The response contains status information about the request and may also contain the requested content.
+
+GET - Requests data from a specified resource
+POST - Submits data to be processed to a specified resource
+
+*********************************************************
+
+Google App Script
+
+Google Apps Script is a scripting language based on JavaScript that lets you do new and cool things with Google Apps like Docs, Sheets, and Forms. There's nothing to install — we give you a code editor right in your browser, and your scripts run on Google's servers.
+
+Responsive web design is about creating web sites which automatically adjust themselves to look good on all devices, from small phones to large desktops.
+
+we cannot write the If/ system.debug/ for loops directly in the class
+we need to write them in the methods or constructors.
+
+what is stateful and stateless operation
+
+In information technology, a Uniform Resource Identifier (URI) is a string of characters used to identify a resource. Such identification enables interaction with representations of the resource over a network, typically the World Wide Web, using specific protocols
+
+Making your Apex class available as a REST web service is straightforward. Define your class as global, and define methods as global static. Add annotations to the class and methods
+
+ubiquitous: present, appearing, or found everywhere
+Ubiquitous access: Use standard HTTP method call-outs, available on every language and platform, to make requests and retrieve information from Force.com
+
+OAuth is an open protocol that allows a website to access resources of another website without having to expose a user's credentials
+OAuth allows users to hand out security tokens to specific sites for access to specific resources for a defined duration
+The OAuth website defines OAuth as "an open protocol to allow secure API authorization in a simple and standard method from desktop and web applications.
+The OAuth protocol enables a website (the consumer) to access protected resources from another web service (the service provider) through an API
+
+merchant: a person or company involved in wholesale trade, especially one dealing with foreign countries or supplying goods to a particular trade
+
+use the @future annotation to make the callout run asynchronously.
+
+****************************************************************************************
+17/12/2016
+
+deserializeUntyped(jsonString)
+
+Deserializes the specified JSON string into collections of primitive data types
+
+Class Property
+The class property returns the System.Type of the type it is called on. It is exposed on all Apex built-in types including primitive data types and collections, sObject types, and user-defined classes. This property can be used instead of forName methods.
+
+System.Type t = integer.class;
+System.debug(t);
+
+Type Class
+Contains methods for getting the Apex type that corresponds to an Apex class and for instantiating new types.
+
+Parse: analyse (a string or text) into logical syntactic components.
+"a user question input is parsed into an internal conceptual representation
+The teacher asked the students to parse the sentances
+
+affiliate: officially attach or connect (a subsidiary group or a person) to an organization
+JNTU Affiliated: CMR is officially attached to JNTU
+
+A named credential specifies the URL of a callout endpoint and its required authentication parameters in one definition
+
+HTTP
+HttpRequest
+HttpResponse
+
+these are the important classes that we use for callouts
+
+**********************************************************
+
+http://salesforce.vidyard.com/watch/6jld4tygApfp3FQHZiZVZQ - WebservieTestingSession
+http://blog.crmscience.com/2014/12/test-coverage-pattern-for-multi-callout.html - ApexCalloutTestBlog
+
+**********************************************************
+
+Rudimentary: involving or limited to basic principles.
+he received a rudimentary education
+syno: basic,
+
+retrospective: looking back on or dealing with past events or situations.
+"our survey was retrospective"
+the Government introduced retrospective legislation to change the rules
+syno: backward looking
+
+
+To display the date in the dd/mm/yy format use the below code
+<td><apex:outputText value="{0,date,dd'/'MM'/'yyyy}">
+         <apex:param value="{!oliList[0].Expected_Pickup_Date__c}" /> 
+        </apex:outputText></td>
+
+scrum 
+scrum master
+
+Remittance: a sum of money sent in payment or as a gift.
+"complete your booking form and send it together with your remittance"   
+
+
+a small lump of gold or other precious metal found ready-formed in the earth.
+a small chunk or lump of another substance.
+"nuggets of meat"
+synonyms:	lump, chunk, small piece     
+
+You cannot create a new Master-Detail relationship on an existing custom object if records already exist. You must first create a Lookup relationship, populate the lookup field with data in all records, and then change the relationship type to Master-Detail.
+
+boutique: a business serving a sophisticated or specialized clientele.
+"California's boutique wineries"
+We are a boutique software architecture consulting firm focused on social good
+
+clientele: clients collectively.
+"the solicitor's clientele"
+the dancers don't mix with the clientele
+
+solicit: ask for or try to obtain (something) from someone.
+"he called a meeting to solicit their views"
+Phil had been trying to solicit his help all morning
+syno:   ask for, request,
+
+Solicitation: the act of asking for or trying to obtain something from someone.
+"he was a regular target for solicitation of funds
+
+********************************************************
+
+25/12/2016
+
+Communities can be based on standard Salesforce functionality and tabs, or on one of our preconfigured templates. Communities may contain a subset of features and data available in your internal Salesforce organization and can be customized to use your company branding
+
+intutive: using or based on what one feels to be true even without conscious reasoning; instinctive.
+"his intuitive understanding of the readers' real needs"
+syno: instinctive, (computer software) easy to use and understand
+
+Products standard object is available in communities(read only)
+
+when we exceed limits in salesforce we can purchase the overages
+
+A content delivery network or content distribution network (CDN) is a globally distributed network of proxy servers deployed in multiple data centers. The goal of a CDN is to serve content to end-users with high availability and high performance.
+
+cache: replica of the content
+
+bottleneck: a situation that causes delay in a process or system.
+we need to identify the bottlenecks in the development process
+
+IP Address: Internet Protocol
+DNS: Domain name systems: Resolves domain names to IP addresses
+
+ISP: Internet Service Provider
+
+TLD: Top-level domain server
+
+site.com lets you create custom pages for communities using the drag and drop features
+
+Page view limit in communities: Requests from authenticated community users are not counted as page views
+A request from a non-authenticated community user to load a page associated with your community. 
+
+embark: begin (a course of action).
+"she embarked on a new career"
+synonyms:	begin, start, commence, undertake, set about,
+As you embark on your journey to become a customer company, we believe that your employees will be key to your success
+
+employees and users with a Salesforce internal license can access external Communities at no extra charge. All internal licenses are supported except the Chatter External license.
+
+External user licenses are targeted at people outside your company, such as partners or customers. External licenses include legacy portal licenses and Communities licenses. Users with a portal license can access both portals and communities; users with a community license can only access Communities
+
+Communities has feature parity with portals
+Parity: the state or condition of being equal, especially as regards status or pay.
+"parity of incomes between rural workers and those in industrial occupations"
+synonyms:	equality, equivalence, uniformity, sameness, consistency
+"the euro's parity with the dollar"
+
+Member-based vs Login-based licenses
+Member based - based on the number of users and they can login n number of times
+Login - based: based on the number of login's the licensing cost is calculated
+
+extraneous: irrelevant or unrelated to the subject being dealt with.
+"one is obliged to wade through many pages of extraneous material"
+synonyms:	irrelevant, immaterial,
+
+courts are obliged to act in accordance with the strict rules of the law
+doctors are obliged by law to keep patients alive while there is a chance of recovery
+
+communities limits
+https://help.salesforce.com/articleView?amp;language=en_US&id=users_license_types_communities.htm&type=0
+
+building communities
+https://developer.salesforce.com/blogs/developer-relations/2014/01/communities-containers-options-for-building-salesforce-communities.html
+
+Question-to-Case Overview
+
+******************************************************************************
+26/12/2016
+
+moderation: the avoidance of excess or extremes, especially in one's behaviour or political opinions.
+"he urged the police to show moderation"
+synonyms:	relaxation, easing (off), reduction,
+the action of making something less extreme, intense, or violent.
+
+SKU: Stock keeping unit
+COGS: Cost of goods sold
+
+Obsolete: no longer produced or used; out of date.
+"the disposal of old and obsolete machinery"
+synonyms:	out of date, outdated, outmoded, old-fashioned; More
+f you disable a partner user, the partner user role becomes obsolete, and the data no longer rolls up to the partner account role
+
+***********************************************************************************
+27/12/2016
+
+select count() from opportunity
+
+************************************************************************************
+28/12/2016
+
+Client ID and Client secret will be provided to the application which wants to integrate with the external service
+
+SDK - Software development kit
+
+in shopclues there is unix time conversion. 
+
+A listing is the complete information of a product that buyers view before placing an order. It contains details such as stock, price, delivery period, and so on. It is identified by a listing ID, which is mapped to the seller’s SKU ID
+
+***********************************************************************************
+29/12/2016
+
+Cloud Flow Designer: is the tool that is used to build flows
+
+list price: Its the highest amount that is charged before applying any discounts
+Net Price: the final amount the customer is willing to pay afer the discount is applied and tax added
+
+JSON.deserialize(jsonString, apexType)
+Deserializes the specified JSON string into an Apex object of the specified type.
+
+CSS - overflow
+The CSS overflow property specifies whether to clip content or to add scrollbars when the content of an element is too big to fit in a specified area.
+
+p.ex {
+    height: 100px;
+    width: 100px;
+}
+Set the height and width of a paragraph:
+
+select id, contact.Accountid from user where id = '0056F000006CLSt'
+
+Heroku is a cloud application platform separate from Force.com. It provides a powerful Platform as a Service for deploying applications in a multitude of languages, including Java
+
+Git is a distributed source control system with an emphasis on speed and ease of use. Heroku integrates directly into Git, allowing for continuous deployment of your application by pushing changes into a Heroku repository. GitHub is a Web-based hosting service for Git repositories.
+
+Apex triggers are not permitted to make synchronous Web service calls. This restriction ensures that a long-running Web service doesn’t hold a lock on a record within your Force.com app.
+
+***********************************************************
+30/12/2016
+
+Forking: creating a copy of repository
+
+***************************************
+31/12/2016
+
+The content of an anonymous block can include user-defined methods and exceptions. It cannot include the keyword static
+
+The Lightning Component framework is a UI framework for developing dynamic web apps for mobile and desktop devices. It’s a modern framework for building single-page applications engineered for growth.
+
+The framework supports partitioned multi-tier component development that bridges the client and server. It uses JavaScript on the client side and Apex on the server side
+
+Lightning components available in the Lightning App Builder so administrators can build custom user interfaces without code
+
+Uses a stateful client and stateless server architecture that relies on JavaScript on the client side to manage UI component metadata and application data. The client calls the server only when absolutely necessary; for example to get more metadata or data. The server only sends data that is needed by the user to maximize efficiency. The framework uses JSON to exchange data between the server and the client. It intelligently utilizes your server, browser, devices, and network so you can focus on the logic and interactions of your apps.
+
+what is statefull client?
+
+Components are the self-contained and reusable units of an app. They represent a reusable section of the UI, and can range in granularity from a single line of text to an entire app.
+Components interact with their environment by listening to or publishing events.
+
+A component registers that it may fire an event in its markup. Events are fired from JavaScript controller actions that are typically triggered by a user interacting with the user interface.
+
+Event-driven programming is used in many languages and frameworks, such as JavaScript and Java Swing. The idea is that you write handlers that respond to interface events as they occur.
+
+Component events are handled by the component itself or a component that instantiates or contains the component.
+Application events are handled by all components that are listening to the event. These events are essentially a traditional publish-subscribe model.
+
+Salesforce requires My Domain as a security measure to help prevent malicious attacks—just in case a security hole lies hidden deep within a third-party or custom component.
+
+Domain Name: Example google.com, yahoo.com
+
+@AuraEnabled enables client- and server-side access to the controller method.
+
+regression: a return to a former or less developed state.
+"it is easy to blame unrest on economic regression"
+Salesforce executes all your tests before each major release to help us avoid regressions
+
+Single action
+Test to verify that a single record produces the correct, expected result.
+Bulk actions
+Any Apex code, whether a trigger, a class or an extension, may be invoked for 1 to 200 records. You must test not only the single record case, but the bulk cases as well.
+
+Conditional (ternary) Operator
+Example: "The fee is " + (isMember ? "$2.00" : "$10.00")
+
+binary: two
+ternary: three - composed of three parts.
+
+To create a run of test suites
+suite: a set of programs with a uniform design and the ability to share data
+test suites: a list of related test classes
+
+An OAuth authentication flow defines a series of steps used to coordinate the authentication process between your application and Salesforce
+
+************************************************************
+01/01/2017
+
+checkout: take a file from the repository and make them as working copy
+remote: setting up link between local repository to the BitBucket
+
+git-clone - Clone a repository into a new directory. creating a copy of repository from cloud to local 
+
+*************************************************************
+02/01/2017
+
+mkdir repos: creates a repository
+
+git clone https://MohanChander@bitbucket.org/MohanChander/testrepository.git //clones the repository from the BitBucket to the local machine
+
+The git status command tells you about how your project is progressing in comparison to your Bitbucket repository.
+
+git push origin master //pushes the code from the local repository to the bitbucket cloud
+
+blog: a regularly updated website or web page, typically one run by an individual or small group, that is written in an informal or conversational style.
+add new material to or regularly update a blog.
+"it's about a week since I last blogged"
+
+***************************************************************
+03/01/2017
+
+If the you deselect Community User Visibility, external users can’t see each other. The setting applies to all communities in your organization
+
+Share groups allow you to share records owned by high-volume community users with internal and external users in your communities
+
+High volume customer users/community users cannot be added in public groups. What they can do is they can share the records that they own with the salesforce users.
+http://salesforce.stackexchange.com/questions/30418/how-to-add-a-customer-community-user-into-salesforce-public-group
+
+INCLUDES ( {!mspvar} , "yellow" ) 
+&& INCLUDES ( {!mspvar} , "blue" ) 
+&& INCLUDES ( {!mspvar} , "green" )
+
+getting the parent details from the soql query
+select id, Status, Markerplace_Order_Id__c, AccountID, Account.Name from order where Id = '8016F000001wVCz'
+
+**************************************************************
+04/01/2017
+
+onclick = "window.open('url')" ***** To navigate to a differnt url on click of a button
+
+To display related list of notes and Attachments
+<apex:relatedList subject="{!account}" list="CombinedAttachments" />
+
+query on user object to get all the details
+SELECT AccountId,Alias,CompanyName,ContactId,Email,FirstName,IsActive,LastName,UserRoleId,UserType FROM User where id = '0056F000006CGgN'
+
+replacing the save button with the url
+https://developer.salesforce.com/forums/?id=906F000000099YDIAY
+
+
+//SOQL bind variable is a list of string and we are passing list of string as the input. We will fetch all the accounts within the list. So soql can take a list as the bind variable
+List<String> inputList = new List<String>{'Flipkart', 'Amazon'};
+List<Account> accList = [select id, Name, Description from Account where name =: inputList];
+System.debug(accList);
+
+***************************************************************
+05/01/2017
+
+Error Handling
+There are two types of error codes:
+Client (4xx): Authentication failure or invalid domain on the client side
+Server (5xx): Server errors
+
+Procurement: the action of obtaining or procuring something
+synonyms: procure- obtain something
+
+fsn: Flipkart Serial Number used to identify system objects such as Products
+
+***************************************************************
+01/06/2016
+
+webhook
+HCI
+
+Installed Managed Packages are not included. unmanaged packages are not excluded from custom object limits since they are not considered to be part of a separate ISV app 
+
+String resultString = EncodingUtil.convertToHex(Crypto.generateDigest(formatType, Blob.valueOf(targetString)));
+
+use UserInfo class to access the user details in apex
+use $User global variable in vf to access the user details in the page
+
+\ escape character.
+
+The software utility Cron is a time-based job scheduler in Unix-like computer operating systems. People who set up and maintain software environments use cron to schedule jobs (commands or shell scripts) to run periodically at fixed times, dates, or intervals.
+
+emulate: match or surpass (a person or achievement), typically by imitation.
+"most rulers wished to emulate Alexander the Great
+	imitate, copy, reproduce, mimic
+
+***********************************************************************
+07/01/2016
+
+IMO: in my opinion
+
+Here is a list of governor limits specific to the @future annotation:
+No more than 10 method calls per Apex invocation
+No more than 200 method calls per Salesforce license per 24 hours
+The parameters specified must be primitive dataypes, arrays of primitive datatypes, or collections of primitive datatypes.
+Methods with the future annotation cannot take sObjects or objects as arguments.
+Methods with the future annotation cannot be used in Visualforce controllers in either getMethodName or setMethodName methods, nor in the constructor.
+
+annotation: a note by way of explanation or comment added to a text or diagram.
+the action of annotating a text or diagram.
+synonyms:	note, notation, comment,
+
+************************************************************************
+09/01/2016
+
+hedge: a fence or boundary formed by closely growing bushes or shrubs.
+"a privet hedge"
+syno: row of bushes
+
+Access to Account which the user is part of is given using sharing setting. Sharing set in Communities allows you give access to childs of Accounts and Contacts (like cases) to the high volume community users.
+
+*************************************************************************
+10/01/2016
+
+how to create a visualforce popup
+http://www.salesforcegeneral.com/salesforce-modal-dialog-box/
+
+An interface is like a class in which none of the methods have been implemented—the method signatures are there, but the body of each method is empty. To use an interface, another class must implement it by providing a body for all of the methods contained in the interface
+
+Once you create a constructor for a class, you no longer have access to the default, no-argument public constructor. You must create your own.
+
+In Apex, a constructor can be overloaded, that is, there can be more than one constructor for a class, each having different parameters
+
+By default, a method or variable is visible only to the Apex code within the defining class. You must explicitly specify a method or variable as public in order for it to be available to other classes in the same application namespace
+
+Private: method or variable is accessible only within the Apex class in which it is defined
+
+You can use static methods and variables only with outer classes. Inner classes have no static methods or variables. A static method or variable doesn’t require an instance of the class in order to run
+
+A static method is used as a utility method, and it never depends on the value of an instance member variable. Because a static method is only associated with a class, it can’t access the instance member variable values of its class.
+
+A static variable is static only within the scope of the Apex transaction. The value of a static variable persists within the context of a single transaction and is reset across transaction boundaries
+
+To store information that is shared across instances of a class, use a static variable. All instances of the same class share a single copy of the static variable 
+
+A class static variable can’t be accessed through an instance of that class
+
+The z-index property specifies the stack order of an element.
+An element with greater stack order is always in front of an element with a lower stack order.
+Note: z-index only works on positioned elements (position:absolute, position:relative, or position:fixed).
+
+The <div> tag defines a division or a section in an HTML document.
+The <div> tag is used to group block-elements to format them with CSS.
+
+Sample: 
+<div style="color:#0000FF">
+  <h3>This is a heading in a div element</h3>
+  <p>This is some text in a div element.</p>
+  <p>This is some text.</p>
+</div>
+
+A block-level element always starts on a new line and takes up the full width available (stretches out to the left and right as far as it can).
+Examples of block-level elements:
+<div>
+<h1> - <h6>
+<p>
+<form>
+
+An inline element does not start on a new line and only takes up as much width as necessary.
+Examples of inline elements:
+
+<span>
+<a>
+<img>
+
+The <span> tag is used to group inline-elements in a document.
+The <span> tag provides a way to add a hook to a part of a text or a part of a document.
+Sample:
+<p>My mother has <span style="color:blue">blue</span> eyes.</p>
+
+uses of div and span tag
+The <div> element is often used as a container for other HTML elements. the <div> element can be used to style blocks of content
+<div>:	Defines a section in a document (block-level)
+The <span> element is often used as a container for some text. the <span> element can be used to style parts of the text
+<span>:	Defines a section in a document (inline)
+
+******************************************************************
+11/01/2016
+
+apex:listViews: The list view picklist for an object, including its associated list of records for the currently selected view
+
+Account is the parent of Order. Getting the parent details using soql
+select id, AccountId, Account.Name from order
+
+Routing Definition. Routing is the process of moving packets across a network from one host to a another. It is usually performed by dedicated devices called routers. Packets are the fundamental unit of information transport in all modern computer networks, and increasingly in other communications networks as well
+
+Each routing address is an email address that your customers can use to submit cases to your support team. Emails are automatically converted to cases based on the settings specified for each routing address
+
+On-Demand Email-to-Case enables you to solely use Force.com to convert email to cases, 
+whereas Email-to-Case enables you to use salesforce.com and your email system to convert email to cases.
+
+DateTime class: Contains methods for the Datetime primitive data type.
+getTime(): Returns the number of milliseconds since January 1, 1970, 00:00:00 GMT represented by this DateTime object
+
+PageReference.setRedirect(true): flushes the view state 
+setRedirect(false): preserves the view state and renders the page with whatever is there in the page
+
+Boolean.valueOf(stringToBoolean): converts string to boolean
+
+omnipotent: having unlimited power.
+"God is described as omnipotent and benevolent"
+having great power and influence.
+"an omnipotent sovereign"
+
+sovereign: a supreme ruler, especially a monarch.
+"the Emperor became the first Japanese sovereign to visit Britain"
+synonyms:	ruler, monarch, supreme ruler
+
+impediment: a hindrance or obstruction in doing something.
+"a serious impediment to scientific progress"
+synonyms:	hindrance, obstruction, obstacle
+No impediments in my project work
+
+Nazi: a person who seeks to impose their views on others in a very autocratic or inflexible way.
+"I learned to be more open and not such a Nazi in the studio"
+Grammer Nazi: A person who habitually corrects or criticizes the language usage of others
+
+Virtual desktop infrastructure (VDI) is the practice of hosting a desktop operating system within a virtual machine (VM) running on a centralized server. VDI is a variation on the client/server computing model, sometimes referred to as server-based computing
+
+An email agent is a program that is part of the email infrastructure, from composition by sender, to transfer across the network, to viewing by recipient.
+
+Config Workbook: App on metadata and impact analysis
+
+A test suite is a collection of Apex test classes that you run together
+
+Methods of a test class can only be called from a running test, that is, a test method or code invoked by a test method, and can't be called by a non-test request.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

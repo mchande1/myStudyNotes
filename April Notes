@@ -1,0 +1,6 @@
+April Notes
+-----------
+
+01/04/2017
+
+Lightning Out is added to external apps in the form of a JavaScript library you include in the page on the origin server, and markup you add to configure and activate your Lightning components app. Once initialized, Lightning Out pulls in your Lightning components app over a secure connection, spins it up, and inserts it into the DOM of the page it’s running on. 

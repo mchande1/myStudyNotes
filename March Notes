@@ -1,0 +1,224 @@
+04/03/2016
+
+Beanstalk: the stem of a bean plant, proverbially fast-growing and tall.
+Launch an Application with AWS Elastic Beanstalk
+Stalk: stem
+
+reciprocal: given, felt, or done in return.
+"she was hoping for some reciprocal comment or gesture"
+reciprocal services in cost Accounting - s1 and s2 are reciprocal services
+s1 services are utilized by s2 and s2 services are utilized by s1
+
+*****************************************************
+07/03/2017	
+
+caveat: a warning or proviso of specific stipulations, conditions, or limitations.
+"there are a number of caveats which concern the validity of the assessment results"
+synonyms:	warning, caution
+I ran across this same problem while doing some non-profit work for Medisend International and the solution (with a caveat) is to write a trigger to perform the roll-up.
+
+Salesforce.com recently made an important change to collections. There is no longer a limit on the number of items a collection can hold. However, there is a general limit on heap size
+
+fodder: food, especially dried hay or straw, for cattle and other livestock.
+a person or thing regarded only as material for a specific use.
+"young people ending up as factory fodder
+I tried to fit virtually everything that I could about collections onto a single blog post hoping it will make good Evernote fodder
+
+rule of thumb: a broadly accurate guide or principle, based on practice rather than theory.
+"a useful rule of thumb is that about ten hours will be needed to analyse each hour of recorded data"
+The rule of thumb is to use the point-n-click Builder first and write code only as a last resort.
+
+variance: the fact or quality of being different, divergent, or inconsistent.
+"her light tone was at variance with her sudden trembling"
+synonyms:	difference, variation,
+
+A standard object cannot be the child/detail in a Master-Detail relationship. An example is that you cannot create a Master-Detail relationship from the Asset object because the Asset cannot be the child in a Master-Detail relationship.
+
+prospective customers (leads)
+
+enduring: lasting over a period of time; durable.
+"he formed a number of enduring relationships with women"
+Among the many things this book teaches you, you'll learn how to architect and support enduring applications for enterprise clients with Salesforce by exploring how to identify architecture needs and design solutions based on industry standard patterns
+
+heterogeneous - diverse
+homogeneous - similar
+
+opportunity cost: the loss of other alternatives when one alternative is chosen
+
+*************************************************
+08/03/2016
+
+AggregateResult[] agrResult = [select Avg(Amount)aver from Opportunity];
+Decimal i =(Decimal) agrResult[0].get('aver');
+System.debug(i);
+
+AggregateResult[] groupedResult = [select AccountId, Count(Name)conSum from Contact GROUP BY AccountId];
+for(AggregateResult ar: groupedResult){
+    System.debug('Account Name: ' + ar.get('AccountId') + 'Contacts Count: ' + ar.get('conSum'));
+}
+
+*************************************************
+
+09/03/2017
+
+get recordType name dynamically
+System.debug(Schema.SObjectType.Order.getRecordTypeInfosByName().get('Purchase Order').getRecordTypeId());
+
+***************************************************
+10/03/2017
+
+Ethernet is the name of the most commonly used LAN today. A LAN (Local Area Network) is a network of computers that covers a small area like a room, an office, a building or a campus.
+Ethernet is a network protocol that controls how data is transmitted over a LAN
+
+*************************************************
+11/03/2017
+
+Dynamic Apex Describe Information capabilities.  These capabilities allow us to interrogate a field or sObject, and describe their characteristics
+
+***************************************************
+12/03/2017
+
+framework: an essential supporting structure of a building, vehicle, or object.
+an essential supporting structure of a building, vehicle, or object.
+synonyms:	frame, substructure, structure, skeleton
+
+dont use system.debug statements in your production. There is additional cost for executing debug statements - if the debug is in a loop it gets executed multiple times.
+As a best practice comment out all the debugs 
+
+**************************************************
+13/03/2017
+
+Letterhead: a printed heading on stationery, stating a person or organization's name and address.
+"write to the company's registered office, which you can normally get from their letterhead"
+stationery with a printed heading.
+
+**************************************************
+14/03/2017
+
+Bay: a broad inlet of the sea where the land curves inwards.
+"a boat trip round the bay"
+synonyms:	cove, inlet
+Service bay: where repairs of the vehicles are done
+
+PDI: Pre delivery Inspection
+
+vigilance: the action or state of keeping careful watch for possible danger or difficulties.
+"security duties that demand long hours of vigilance"
+synonyms:	watchfulness, careful observation
+ Achieving and maintaining high-quality data requires vigilance, good
+processes, and a little help from technology—including the features in Salesforce CRM, tools from the
+Force.com platform, and solutions from our partners on the AppExchange
+
+In computing, denormalization is the process of trying to improve the read performance of a database, at the expense of losing some write performance, by adding redundant copies of data or by grouping data
+
+In relational database design, the process of organizing data to minimize redundancy. Normalization usually involves dividing a database into two or more tables and defining relationships between the tables.
+
+HOG: Harley Owners Group
+
+Create a pageReference and handle the exception
+PageReference pr = System.Page.ErrorPage;
+ 
+try
+{
+.......some code.... 
+}
+catch(exception ex)
+{
+pr.getParameters.Put('error',ex.getMessage()); // or add multiple error messages if necessary 
+return pr;
+
+Map<Id, Account> newMap = new Map<Id, Account>([select Id, Name from Account]);
+System.debug(newMap.values()[0].Name);
+
+**************************************************************
+15/03/2017
+
+for a method to return data types use a wrapper class and return two datatypes. A method can usually return only single data type. 
+To make a method return multiple data types wrap them up and then return the wrapper 
+
+//sample code
+public class wrapperClass{
+   Integer int;
+   String str;
+   Account acc;
+}
+
+public static wrapperClass methodToReturnWrapper(){
+
+    wrapperClass wc = new wrapperClass();
+    //here you can fill in wrapper with values you want, like wc.int = 1
+    return wc;
+}
+
+******************************************************
+17/03/2017
+
+if you update or delete a record in its before trigger, or delete a record in its after trigger, you will receive a runtime error.
+
+******************************************************
+18/03/2017
+
+ctrl + T : new tab
+ctrl + L : focus on the URL
+ctrl + PageUp/ PageDown : to naviagte between the tabs
+navigate backward : Alt+ left side arrow
+navigate forward: Alt + right side arrow
+
+Custom Settings are not automatically deployed from sandbox to Production. 
+First deploy the Custom Settings Metadata 
+Then use data loader to deploy the actual data from one env to other env
+
+AccountShare for that matter any share object is a junction object between Account/any other object  and the user object
+
+*******************************************************
+19/03/2017
+
+In apex we can use the return statement to exit from a function
+
+public class testClass{
+    
+    public void atestMethod(){
+        System.debug('this is my first statement');
+        System.debug('this is my second Statement');
+        return;
+        System.debug('this is my second Statement');
+    }
+}
+
+testClass t = new testClass();
+t.atestMethod();
+
+*******************************************************
+20/03/2017
+
+A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project. Most commonly, forks are used to either propose changes to someone else's project or to use someone else's project as a starting point for your own idea.
+
+*******************************************************
+27/03/2017
+
+A price book entry defines the price for which you sell a product at a particular currency
+
+Sparingly: in a restricted or infrequent manner; in small quantities.
+"the sharply flavoured leaves should be used sparingly"
+
+Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.
+
+SLDS - CSS framework
+
+The <iframe> tag specifies an inline frame.
+An inline frame is used to embed another document within the current HTML document.
+
+Om Kship Swaha
+Om Sah Maatraa Namah
+
+********************************************************
+28/03/2017
+
+The reload() method is used to reload the current document.
+The reload() method does the same as the reload button in your browser.
+By default, the reload() method reloads the page from the cache, but you can force it to reload the page from the server by setting the forceGet parameter to true: location.reload(true).
+
+The location object contains information about the current URL.
+The location object is part of the window object and is accessed through the window.location property.
+
+custom objects available in the Org

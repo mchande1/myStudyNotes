@@ -1,0 +1,398 @@
+12/01/2016
+
+Custom lables: Custom labels are custom text values that can be accessed from Apex classes or Visualforce pages
+System.Label.labelName to access custom label
+
+immutable: unchanging over time or unable to be changed.
+"an immutable fact"
+synonyms:	unchangeable, fixed, set, rigid,
+The list of sObjects returned by getRecords() is immutable
+
+ledger: a book or other collection of financial accounts.
+the total balance of the purchases ledger"
+synonyms:	book, account book, record book
+
+novelty: the quality of being new, original, or unusual.
+"the novelty of being a married woman wore off"
+"they liked the novelty of our approach"
+synonyms:	originality, newness, freshness,
+
+Cryptography is the practice and study of techniques for securing communication and data in the presence of adversories
+
+*****************************************************
+
+13/01/2016
+
+deligence: careful and persistent work or effort.
+"few party members challenge his diligence as an MP"
+Syno: intentness, studiousness
+
+****************************************************
+14/01/2016
+
+verse: writing arranged with a metrical rhythm, typically having a rhyme.
+synonyms:	poetry, 
+
+.each of the short numbered divisions of a chapter in the Bible or other scripture.
+"we were each required to recite a Bible verse from memory"
+
+****************************************************
+15/01/2016
+
+Swag: a very confident attitude or manner.
+"not only does he have a great voice, but he's got swag"
+
+*****************************************************
+17/01/2016
+
+An iterator traverses through every item in a collection. For example, in a while loop in Apex, you define a condition for exiting the loop, and you must provide some means of traversing the collection, that is, an iterator.
+Count is the iterator in the below sample
+while (count < 11) {
+   System.debug(count);
+      count++;
+   }
+
+Using the Iterator interface you can create a custom set of instructions for traversing a List through a loop
+
+realm: a field or domain of activity or interest.
+"the realm of applied chemistry"
+realm of salesforce
+
+proprietary: relating to an owner or ownership.
+"the company has a proprietary right to the property"
+
+proprietor: the owner of a business, or a holder of property.
+"Chinese restaurant proprietors"
+synonyms:	owner, possessor
+
+Vendors typically distribute proprietary software in compiled form, usually the machine language understood by the computer's central processing unit. They typically retain the source code, or human-readable version of the software, written in a higher level programming language.
+ 
+Depiction: the action of depicting something, especially in a work of art.
+"the painting's horrific depiction of war"
+ a high level depiction of app architecture
+
+ **********************************************
+ 18/01/2016
+
+ Seemingly: so as to give the impression of having a certain quality; apparently.
+"a seemingly competent and well-organized person"
+
+Virtual reality: the computer-generated simulation of a three-dimensional image or environment that can be interacted with in a seemingly real or physical way by a person using special electronic equipment, such as a helmet with a screen inside or gloves fitted with sensors.
+
+the key to machine intelligence is that it must be able to sense, reason, and act, then adapt based on experience.
+
+empirical: based on, concerned with, or verifiable by observation or experience rather than theory or pure logic.
+"they provided considerable empirical evidence to support their argument"
+synonyms:	observed, seen, factual, actual, real,
+For the first time in my life the world "creativity" had an empirical meaning
+
+onus: something that is one's duty or responsibility.
+"the onus is on you to show that you have suffered loss"
+synonyms:	burden, responsibility, liability, 
+
+*********************************************************
+19/01/2016
+
+SPOC is an acronym that may stand for: Single Point of Contact
+
+A top-level domain (TLD) is one of the domains at the highest level in the hierarchical Domain Name System of the Internet.
+in the domain name www.example.com, the top-level domain is com
+
+A domain name is an identification string that defines a realm of administrative autonomy, authority or control within the Internet. Domain names are formed by the rules and procedures of the Domain Name System (DNS). Any name registered in the DNS is a domain name. Domain names are used in various networking contexts and application-specific naming and addressing purposes
+
+The File Transfer Protocol (FTP) is a standard network protocol used to transfer computer files between a client and server on a computer network.
+
+Privacy mode or "private browsing" or "incognito mode" is a privacy feature in some web browsers to disable browsing history and the web cache. This allows a person to browse the Web without storing local data that could be retrieved at a later date
+
+autonomy: the right or condition of self-government.
+"between the First and Second World Wars, Canada gained greater autonomy from Britain
+he courts enjoy a considerable degree of autonomy
+syno: 	self-government, independence, self-rule
+
+In telecommunications, a communication protocol is a system of rules that allow two or more entities of a communications system to transmit information via any kind of variation of a physical quantity. These are the rules or standard that defines the syntax, semantics and synchronization of communication and possible error recovery methods. Protocols may be implemented by hardware, software, or a combination of both
+
+domain: a distinct subset of the Internet with addresses sharing a common suffix or under the control of a particular organization or individual
+
+domain: a specified sphere of activity or knowledge.
+"the country's isolation in the domain of sport"
+you are working in which domain
+
+Simple Mail Transfer Protocol, a protocol for sending e-mail messages between servers. Most e-mail systems that send mail over the Internet use SMTP to send messages from one server to another; the messages can then be retrieved with an e-mail client using either POP or IMAP. In addition, SMTP is generally used to send messages from a mail client to a mail server. This is why you need to specify both the POP or IMAP server and the SMTP server when you configure your e-mail application.
+
+Post Office Protocol, a protocol used to retrieve e-mail from a mail server. Most e-mail applications (sometimes called an e-mail client) use the POP protocol, although some can use the newer IMAP (Internet Message Access Protocol).
+
+IMAP: a protocol for retrieving e-mail messages
+
+Semantic HTML is the use of HTML markup to reinforce the semantics, or meaning, of the information in webpages and web applications rather than merely to define its presentation or look. Semantic HTML is processed by traditional web browsers as well as by many other user agents.
+
+Semantics is the study of the meanings of words and phrases in a language.
+Semantic elements = elements with a meaning.
+A semantic element clearly describes its meaning to both the browser and the developer.
+Examples of non-semantic elements: <div> and <span> - Tells nothing about its content.no
+Examples of semantic elements: <form>, <table>, and <article> - Clearly defines its content.
+
+The definition of computer telephony integration (CTI) is a term that can be used to describe any technology that enables computers to interact with telephones. This technology is primarily used in call centers and is often used to describe desktop interactions that improve human agents' productivity.
+
+Intelligent Voice Response (IVR)
+
+**************************************************************
+21/01/2016
+
+Eternal: lasting or existing forever; without end.
+"the secret of eternal youth"
+synonyms:	everlasting, never-ending, endless,
+eternal truths of art and life //everlasting truths
+
+unicode: an international encoding standard for use with different languages and scripts, by which each letter, digit, or symbol is assigned a unique numeric value that applies across different platforms and programs.
+
+Arjuna was just like the other students. What set him apart was his will power. Distractions are always going to be there in one form or the other. It takes will power to not get indulged. Determination and the strong will power is the key.
+Combine the concentration with determination and will power. Be your own Arjuna!
+Arjuna's reply is reflective of his abilities to streamline all his focus towards the goal. Concentration is what we learn from here.
+
+Arjuna was able to ignore everything else and have his eyes only on the prize. In life, there are so many irrelevant things that consume our energy on a day-to-day basis. We should always put the chaos aside and concentrate on things that matter.
+
+The truth is O Arjuna when you think of the pain and needs of others and work to help them, you are doing God's work and hence God Himself takes care of you
+
+Perseverance and concentration help us not just with archery, as in the case of Arjuna, but in all the tasks we perform everyday. Whether it is a project or just homework, working diligently and with concentration, we can complete our work faster, and in a much better way!
+
+As I want you all to know concentration is a great power in life; you could win anything with this power. Concentration is possible only through a healthy body and a healthy mind. When I say healthy mind, what I mean is a mind which is able to exercise perfect control over the senses and emotions- Then you need to develop faith in yourself; you must have confidence in yourself to be successful. This comes only through practice over and over again. Finally, you need faith in the Supreme Power that rules this universe and governs all our activities. That alone could invest you with an equanimous attitude towards life. All these factors go to make perfect concentration."
+
+Concentration is a great power which is within the scope of everyone to develop. No matter what the goal the word Impossible does not exist for concentration. But the great tragedy is that in the case of many of us concentration is just in the rudimentary stage. Whatever little of it is acquired is handicapped by fear, worry and haste. It in only in rare cases that one sees the real scope of concentration. There is however nothing which prevents one from developing one's concentration, no mater how old one may be. To begin with, all that is needed is a genuine desire to get the best out of one's life, and that desire will guide one along the high road of concentration.
+
+the best archer is the one who can only see his target and nothing else. Arjuna demonstrated his greatness simply by having the proper focus. Arjuna’s singular focus enabled him to achieve mastery of archery, as described throughout the Mahabharata.
+The character of Arjuna is described as one whose mind is spotless and clean of all impurities. Krishna, in the Bhagavad Gita refers to Arjuna as Anagha, which means pure of heart or sinless. Arjuna's nobility is manifested in his magnanimity in victory and compassion towards adversaries
+
+5) Swiftness
+As an archer, Arjun displayed swiftness and neat movements. Athough he excelled in this, he never underestimated his opponent, which made him a better person.
+
+If the task is gigantic and overwhelming, take a deep breathe and start at the periphery. Move to the center from the periphery. Divide the big task into smaller sub-tasks. And then focus on each smaller sub-task one at a time.
+his bow was an extension of his body, and his body an extension of his mind. He was in perfect alignment. He had no doubts and no distractions hindering his attention and intention to reach his aim. Nothing else existed: such was the intensity of his focus.
+
+Sense of direction: untill and unless i am not aspired to do something from within focus and concentration will not happen. Arjuna was clear in his mind that he wanted to become the best archer in the world hence the focus and concentration. If inspired from with in there needs no one to come and tell me to do something. i go do things .. need to have that drive from with in. Desire is the most constructive power
+
+equanimous: calm and composed
+
+haste: excessive speed or urgency of movement or action; hurry.
+"working with feverish haste"
+synonyms:	speed, hastiness, hurry
+
+valour: great courage in the face of danger, especially in battle.
+"the medals are awarded for acts of valour"
+synonyms:	bravery, courage, fearlessness,
+
+google and salesforce integration
+https://github.com/entaq/GoogleAppsScript/tree/master/Salesforce.com
+
+**************************************************************
+22/01/2016
+
+Protagonist: the leading character or one of the major characters in a play, film, novel, etc.
+"the novel's main protagonist is an American intelligence officer"
+the main figure or one of the most prominent figures in a situation.
+"in this colonial struggle the main protagonists were Great Britain and France"
+
+*******************************************************************
+24/01/2016
+
+legacy: denoting or relating to software or hardware that has been superseded but is difficult to replace because of its wide use.
+legacy systems like siebel are hard to replace in CRM domain
+
+gotcha: a sudden unforeseen problem.
+ it can avoid gotchas when the new releases come out
+
+ foolproof: incapable of going wrong or being misused.
+ syno: never failing
+ a foolproof security system
+ The above list is not foolproof
+
+ workato - integration app
+ Panaya change guru - Black box for salesforce
+
+ Custom lookup in salesforce: https://sfdchack.blogspot.in/2013/01/salesforce-custom-lookup-using-apex.html
+
+Avoid hard coding of ID's
+ Record IDs can change - for example between a sandbox and a production environment. If code is not written properly, this will result in faulty code.
+
+ store the record ID's in a map and access the records 
+List<RecordType> rtypes = [Select Name, Id From RecordType 
+                  where sObjectType='Account' and isActive=true];
+
+//Create a map between the Record Type Name and Id for easy retrieval
+     Map<String,String> accountRecordTypes = new Map<String,String>{};
+     for(RecordType rt: rtypes)
+        accountRecordTypes.put(rt.Name,rt.Id);
+***********************************************************************************
+25/01/2016
+
+macro: a single instruction that expands automatically into a set of instructions to perform a particular task.
+
+Distribute a Flow to External Users
+To distribute a flow to external user embed the flow in a visualforce page and then give community users access to the visualforce page
+
+we cannot add dynamic filter logic in the list views. We can create list views with only static filter condition
+we cannot use formula fields or reference field values in the list view
+
+upselling: The art of upselling is convincing your customer to buy a better, more expensive product in the same category, than the one they are current browsing for
+
+Cross Selling: Selling another additional item with the main item
+
+In requirements engineering, requirements elicitation is the practice of collecting the requirements of a system from users, customers and other stakeholders. The practice is also sometimes referred to as "requirement gathering
+
+**************************************************
+26/01/2016
+
+ambidextrous: able to use the right and left hands equally well.
+"few of us are naturally ambidextrous"
+
+panel: a flat board on which instruments or controls are fixed.
+"a control panel"
+
+Exceptions bubble up from the called method to the caller, as many levels as necessary, until a catch statement is found to handle the error
+throw statements can be used to generate exceptions, while try, catch, and finally can be used to gracefully recover from an exception. A throw statement allows you to signal that an error has occurred.
+
+Any statements in the try block occurring after the exception are skipped and aren’t executed
+
+***********************************************
+27/01/2016
+
+To create a custom button on the related list; create a custom button on the related list object as a List Button and then edit the detial page of the parent object and add this newly created custom button
+
+Site and portal users aren’t allowed to run flows directly
+
+Communities is our next generation portal that combines the power of the Force.com platform,
+Site.com branding, and Chatter collaboration.
+Partner Communities provide even greater ties to business process along with the added power of role-based security to segment the data that’s been shared with different members.
+
+Permission when creating the user: Force.com Flow User: check box that needs to be checked to give access to flow for that particular user
+Process Builder runs in the context of the System. So… when Visual Flow is that when its autolaunched by Process Builder, it too will run in the context of the System and not the Running User.
+
+************************************************
+28/01/2016
+
+jQuery is js library 
+
+$(selector).action();
+In many computer programming languages or script languages a variable is also referred to as an identifier
+All the different visitor's actions that a web page can respond to are called events. An event represents the precise moment when something happens.
+
+event handler function: is a function that executes when an event is fired like when i click on an html element or when i click a check box
+
+************************************************
+29/01/2016
+
+throttle: attack or kill (someone) by choking or strangling them.
+"she was sorely tempted to throttle him"
+Determine the throttling limits for the operation you want to submit.
+
+Sorely: to a very high degree or level of intensity.
+"she would sorely miss his company"
+
+strangle: squeeze or constrict the neck of (a person or animal), especially so as to cause death.
+"the victim was strangled with a scarf"
+
+eavesdrop: secretly listen to a conversation.
+"my father eavesdropped on my phone calls"
+use of HTTPS in order to prevent third-party eavesdropping on your communication
+synonyms:	listen in, spy, intrude; More
+
+intrude:put oneself deliberately into a place or situation where one is unwelcome or uninvited.
+"he had no right to intrude into their lives"
+syno: interfere with, disturb, disrupt; 
+
+A line feed means moving one line forward. The code is \n. 
+A carriage return means moving the cursor to the beginning of the line. The code is \r.
+
+Query requests are simple HTTP requests, using the GET or POST method with query parameters in the URL or HTTP body
+Amazon MWS supports query requests for calling web service actions
+
+In computer science, canonicalization (sometimes standardization or normalization) is a process for converting data that has more than one possible representation into a "standard", "normal", or canonical form.
+syno:  authorized, accepted,
+Creating a Canonicalized Query String
+the canonical rites of the Roman Church
+
+Database normalization, or simply normalization, is the process of organizing the columns (attributes) and tables (relations) of a relational database to reduce data redundancy and improve data integrity
+
+intercept: obstruct (someone or something) so as to prevent them from continuing to a destination.
+"intelligence agencies intercepted a series of telephone calls"
+an Italian naval vessel intercepted the gunrunners' boat"
+Include this in the Query request to help prevent third parties from intercepting your request.
+
+In cryptography, a keyed-hash message authentication code (HMAC) is a specific type of message authentication code (MAC) involving a cryptographic hash function and a secret cryptographic key
+
+ASCII (American Standard Code for Information Interchange) is the most common format for text files in computers and on the Internet. In an ASCII file, each alphabetic, numeric, or special character is represented with a 7-bit binary number (a string of seven 0s or 1s). 128 possible characters are defined.
+
+Base64 is a group of similar binary-to-text encoding schemes that represent binary data in an ASCII string format by translating it into a radix-64 representation
+
+In mathematical numeral systems, the radix or base is the number of unique digits, including zero, used to represent numbers in a positional numeral system. For example, for the decimal system (the most common system in use today) the radix is ten, because it uses the ten digits from 0 through 9.
+For example, (100)10 (in the decimal system) represents the number one hundred, while (100)2 (in the binary system with base 2) represents the number four
+
+A binary-to-text encoding is encoding of data in plain text. More precisely, it is an encoding of binary data in a sequence of printable characters
+
+Coordinated Universal Time (UTC)
+
+Pragmatic: dealing with things sensibly and realistically in a way that is based on practical rather than theoretical considerations.
+"a pragmatic approach to politics"
+
+********************************************************************
+31/01/2017
+
+Java or any other language is used just to build integration clients to salesforce. These integration clients use the Salesforce API to connect to salesforce
+
+Blob: A collection of binary data stored as a single object. You can convert this data type to String or from String using the toString and valueOf methods. Blobs can be accepted as Web service arguments
+
+toString()
+Casts the Blob into a String.
+valueOf(stringToBlob)
+Casts the specified String to a Blob.
+
+EncodingUtil Class: Use the methods in the EncodingUtil class to encode and decode URL strings, and convert strings to hexadecimal format.
+
+When overriding buttons with a Visualforce page, you must use the standard controller for the object on which the button appears. For example, if you want to use a page to override the Edit button on accounts, the page markup must include the standardController="Account" attribute on the <apex:page> tag
+
+Use a controller extension when you need to add extra functionality to Visualforce page that you are using as an override.
+
+SMB: small and Medium Business
+
+artisans: a worker in a skilled trade, especially one that involves making things by hand.
+"street markets where local artisans display handwoven textiles, painted ceramics, and leather goods"
+syno: skilled worker
+
+******************************************************
+01/02/2017
+
+Parent to child
+SELECT Id, name, (select id, name from Order_Line_Items__r) FROM Order__c where id = 'a0S6F00000gvO32UAE'
+
+******************************************************
+02/02/2017
+
+Essentially the system works the same way as you'd expect in a programming language: an empty string is not the same as a null value, it is still an instance of a string.
+
+Use ISBLANK instead of ISNULL in new formulas. ISBLANK has the same functionality as ISNULL, but also supports text fields. Salesforce will continue to support ISNULL, so you do not need to change any existing formulas.
+
+Client: a person or organization using the services of a lawyer or other professional person or company
+"insurance tailor-made to a client's specific requirements"
+synonyms:	customer, buyer, purchaser, shopper, consumer, 
+
+computing
+(in a network) a desktop computer or workstation that is capable of obtaining information and applications from a server.
+"workstation clients are going to be easy to install"
+a program that is capable of obtaining a service provided by another program.
+"friendly client programs like this enable you to perform complicated actions in just a mouse press or two"
+
+PageReference pageRef = Page.success; //success is the vf page name
+
+agent: a person who acts on behalf of another person or group.
+"in the event of illness, a durable power of attorney enabled her nephew to act as her agent"
+synonyms:	representative, negotiator
+
+Computing
+an independently operating Internet program, typically one that performs background tasks such as information retrieval or processing on behalf of a user or other program.
+
+In computing, a user agent is software (a software agent) that is acting on behalf of a user. One common use of the term refers to a web browser telling a web site information about the browser and operating system. ... 
+
+a user agent acts as a client in a network protocol used in communications within a client–server distributed computing system. In particular, the Hypertext Transfer Protocol (HTTP) identifies the client software originating the request, using a user-agent header, even when the client is not operated by a user.
+
+When a software agent operates in a network protocol, it often identifies itself, its application type, operating system, software vendor, or software revision, by submitting a characteristic identification string to its operating peer
+
+In HTTP, the User-Agent string is often used for content negotiation, where the origin server selects suitable content or operating parameters for the response. For example, the User-Agent string might be used by a web server to choose variants based on the known capabilities of a particular version of client software. The concept of content tailoring is built into the HTTP standard in RFC 1945 "for the sake of tailoring responses to avoid particular user agent limitations.”

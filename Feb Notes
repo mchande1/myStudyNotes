@@ -1,0 +1,386 @@
+03/02/2016
+
+Stall: (of a motor vehicle or its engine) stop running, typically because of an overload on the engine.
+"her car stalled at the crossroads"
+2.
+stop or cause to stop making progress.
+"his career had stalled, hers taken off"
+Does not have plan for success and gets stalled on the way
+
+verbosity: the fact or quality of using more words than needed; wordiness.
+"a critic with a reputation for verbosity"
+can we talk about your verbosity (using i++ instead of i = i+1)
+
+interpeter: a program that can analyse and execute a program line by line.
+syno: translator
+when we use the dot notation the js interpeter takes care of using the reference to get to the object and then access its properties for us
+In computer science, an interpreter is a computer program that directly executes, i.e. performs, instructions written in a programming or scripting language, without previously compiling them into a machine language program
+
+compiler: a program that converts instructions into a machine-code or lower-level form so that they can be read and executed by a computer. 	
+
+*********************************************
+04/02/2016
+
+warmhole: a hole made by a burrowing insect larva or worm in wood, fruit, books, or other materials.
+PHYSICS
+a hypothetical connection between widely separated regions of space–time.
+html and javascript are two different technologies. to establish the communication between the two we use the warmhole getElementById()
+
+Two ways to refer the element in JS
+1) var myName = document.getElementById('{! $Component.name}').value
+2) var myName = doucument.getElementById('pg:fm:name').value
+
+********************************************
+05/02/2017
+
+document.getElementById("demo").innerHTML
+The innerHTML property sets or returns the HTML content (inner HTML) of an element.
+
+document.getElementById("demo").value
+The value property sets or returns the value of the value attribute of a text field.
+The value property contains the default value OR the value a user types in (or a value set by a script).
+
+wrapper/container class. A container class is a class, a data structure, or an abstract data type whose instances are collections of other objects
+
+********************************************
+07/02/2016
+
+lieu: instead.
+"the company issued additional shares to shareholders in lieu of a cash dividend"
+
+The team has been migrating parts of their system to Heroku using Ruby on Rails connected to a Heroku Postgres database
+
+Salesforce Einstein Predictive Vision Service (Pilot). 
+
+A pilot program, also called a feasibility study or experimental trial, is a small-scale, short-term experiment that helps an organization learn how a large-scale project might work in practice.
+
+microphone: an instrument for converting sound waves into electrical energy variations which may then be amplified, transmitted, or recorded.
+
+Amazon Echo (shortened and referred to as Echo) is a smart speaker developed by Amazon.com
+
+poll: check the status of (a device), especially as part of a repeated cycle.
+"the network manager can also use the software to poll each Mac on the net"
+
+Scant: barely sufficient or adequate.
+"companies with scant regard for the safety of future generations"
+syno: little
+The greatest surprise to AI researchers is that they have to create systems that jump to conclusions on scant evidence
+
+succint: (especially of something written or spoken) briefly and clearly expressed.
+"use short, succinct sentences"
+antonyms:	lengthy, long-winded, verbose
+
+succintly: in a brief and clearly expressed manner.
+"one word succinctly describes the economy's performance: unbalanced"
+
+salient: most noticeable or important.
+"it succinctly covered all the salient points of the case"
+
+A BOT is the most basic example of a weak AI that can do automated tasks on your behalf
+
+Chatbots: a computer program designed to simulate conversation with human users, especially over the Internet.
+"chatbots often treat conversations like they're a game of tennis: talk, reply, talk, reply"
+
+Data mining is sorting through data to identify patterns and establish relationships.
+
+Machine learning is a type of artificial intelligence (AI) that provides computers with the ability to learn without being explicitly programmed. Machine learning focuses on the development of computer programs that can change when exposed to new data. 
+Facebook's News Feed uses machine learning to personalize each member's feed
+
+In artificial intelligence, an intelligent agent (IA) is an autonomous entity which observes through sensors and acts upon an environment using actuators (i.e. it is an agent) and directs its activity towards achieving goals
+
+perception: 
+the ability to see, hear, or become aware of something through the senses.
+"the normal limits to human perception"
+syno: recognization, cognizance
+
+***************************************************
+08/02/2016
+
+meta: a prefix added to the name of a subject and designating another subject that analyzes the original one but at a more abstract, higher level
+2) (of a creative work) referring to itself or to the conventions of its genre; self-referential.
+"the enterprise is inherently ‘meta’, since it doesn't review movies, for example, it reviews the reviewers who review movies"
+At the top are the Meta categories, then these Meta categories have multiple Sub categories. These Sub categories have leaf nodes which are denoted by the Leaf categories
+
+Difference between Salesforce Files & Notes and Attachments
+
+Files: Upload, store, find, follow, share, sync, and collaborate on Salesforce files in the cloud.
+usage - Upload a file and store it privately until you're ready to share it. Share the file with coworkers and groups to collaborate and get feedback. Attach files to posts in a Chatter feed on the Home tab, Chatter tab, a profile, a record, or a group. Users with access to Salesforce Files Sync can access, sync, and share files in their Salesforce Files Sync folder.
+
+Notes and Attachments: Add a file to a specific record, like an event, marketing campaign, contact, or case by attaching it on the Attachments related list.
+
+Objects you create that map to data stored outside your organization are called external objects
+
+Note Object: Represents a note, which is text associated with a custom object or a standard object, such as a Contact, Contract, or Opportunity. Use this object to manage notes for an object.
+
+Attachment Object: Represents a file that a User has uploaded and attached to a parent object.
+
+The API sends and receives the binary file attachment data encoded as a base64Binary data type. Prior to creating a record, client applications must encode the binary attachment data as base64. Upon receiving a response, client applications must decode the base64 data to binary
+
+The create call restricts these files to a maximum size of 25 MB. For a file attached to a Solution, the limit is 1.5 MB. The maximum email attachment size is 3 MB.
+
+Process Builder cannot access Attachment object. We cannot trigger a process builder when ever a attachment object is created or updated. Process Builder does not allow you to select Attachment as triggering object
+
+Queues allow groups of users to manage a shared workload more effectively. A queue is a location where records can be routed to await processing by a group member. The records remain in the queue until a user accepts them for processing or they are transferred to another queue. You can specify the set of objects that are supported by each queue, as well as the set of users that are allowed to retrieve records from the queue.
+
+*************************************************************
+09/02/2016
+
+Persuasive: good at persuading someone to do or believe something through reasoning or the use of temptation.
+"an informative and persuasive speech"
+synonyms: convincing
+antonym: unconvincing
+
+eloquent: fluent or persuasive in speaking or writing.
+"an eloquent speech"
+Eloquent javascript
+synonyms:persuasive, expressive, articulate, fluent;
+
+window.top.location.href
+
+Concensus: a general agreement.
+"there is a growing consensus that the current regime has failed"
+synonyms:	agreement, harmony,
+Before starting, get a consensus on the coding standards
+
+brought to bear: to aim a weapon at a target
+It’s also exciting to see how Salesforce’s new Einstein artificial intelligence technology can be brought to bear
+
+stigma: a mark of disgrace associated with a particular circumstance, quality, or person.
+"the stigma of having gone to prison will always be with me"
+synonyms:	shame, disgrace,
+
+Social stigma refers to extreme disapproval of (or discontent with) a person or group on socially characteristic grounds that are perceived, and serve to distinguish them, from other members of a society
+
+augment: make (something) greater by adding to it; increase.
+synonyms:	increase,
+Since the industrial revolution, humans have created tools to augment human capabilities
+
+Machine learning is the core driver of AI. It’s the process of using algorithms to tell you something interesting about your data without writing code specific to the problem you’re trying to solve
+it’s a way to have computers learn from data with minimal programming. Instead of writing code, you feed a machine data and it builds its own logical function based on this data.
+
+Deep Learning
+Deep learning is great at automatically learning the best features from somewhat noisy data (read: unstructured) so that algorithms can learn more effectively
+
+Natural Language Processing (NLP)
+Natural language processing (NLP) is a form of machine learning that recognizes language and its many usage and grammar rules by finding patterns within large data sets
+
+test the waters
+
+intrigue: arouse the curiosity or interest of; fascinate.
+"I was intrigued by your question"
+synonyms:	interest,
+So you’ve heard some buzz about Salesforce Einstein, and you’re intrigued
+
+AI is at an evolutionary tipping point with the convergence of data, computing power, and algorithms
+
+Salesforce Einstein—AI for CRM—is embedded in the Salesforce applications
+
+Developers, you can use the PredictionIO as a Heroku service to build custom machine learning engines in a fraction of the time
+
+metamind.io - Salesforce’s Predictive Vision Service
+predictionio
+
+custom metadata types: Custom metadata types enable you to create your own setup objects whose records are metadata rather than data. These are typically used to define application configurations that need to be migrated from one environment to another, or packaged and installed.
+
+*******************************************************
+10/02/2017
+
+Remote Desktop Services (RDS), known as Terminal Services in Windows Server 2008 and earlier,[1] is one of the components of Microsoft Windows that allows a user to take control of a remote computer or virtual machine over a network connection
+
+An FTP server is a software.html application running the File Transfer Protocol (FTP), which is the protocol for exchanging files over the Internet.
+********************************************************
+12/02/2017
+
+insertAdjacentHTML() parses the specified text as HTML or XML and inserts the resulting nodes into the DOM tree at a specified position. It does not reparse the element it is being used on and thus it does not corrupt the existing elements inside that element. This avoids the extra step of serialization, making it much faster than direct innerHTML
+
+Syntax: element.insertAdjacentHTML(position, text);
+
+http://blog.jeffdouglas.com/2011/08/12/roll-your-own-salesforce-lookup-popup-window/
+bobbuzzard.blogspot.com/2010/09/visualforce-lookup.html
+
+*********************************************************
+13/02/2017
+
+ISVforce app: extends sales or service cloud
+
+enterprise resource planning (ERP) for manufacturers
+
+venture: undertake a risky or daring journey or course of action.
+"she ventured out into the blizzard"
+agents for other people's money, they do not venture their own capital
+synonyms:	travel, journey,
+
+perlious: full of danger or risk.
+"a perilous journey south"
+synonyms:	dangerous
+You could be venturing into perilous territory.
+
+Feature or permission set licenses provide access to features that are not part of the base edition.
+
+If the app you want to build has new functionality and can reach beyond Sales and Service Cloud customers, build an OEM Embedded app. You can choose to embed Force.com, Customer Community, and Customer Community Plus licenses in your app
+
+To build functionality that enhances or naturally fits with Sales or Service Cloud, build an ISVforce app that you can sell to existing Salesforce customers.
+
+ace: a person who excels at a particular sport or other activity.
+"a motorcycle ace"
+synonyms:	expert, master
+Do the quiz. (You’ll ace it!) And off you go!
+
+Customers also purchase feature or permission set licenses for non-standard features. For example, using Salesforce Knowledge in the Sales Cloud requires a permission set license.
+
+composite: made up of several parts or elements.
+"this soup is one of those composite dishes which you gradually build up"
+synonyms:	compound, complex
+A client ID allows your app to use the API for integration to composite apps
+
+white list: add to a list of people or things considered trustworthy.
+"it is not possible to whitelist specific users based on their email address or domain name"
+web services (REST) - access to GE and PE is available with connected app consumer whitelisting
+
+Salesforce Connect, a tool using the OData protocol, exposes external data objects inside Salesforce. Users interact with external data as they would with data stored inside platform objects.
+
+Heroku Connect syncs data back and forth between Salesforce and an external app running on Heroku with a Postgres database.
+
+Canvas is a great way to build a composite app. For example, you can embed an order page from an external system and have it share data with Salesforce.
+
+freight: goods transported in bulk by truck, train, ship, or aircraft.
+       : the transport of bulk goods by truck, train, ship, or aircraft.
+       : a charge for transport by freight. (Amount paid for the transport of the good)
+"a decline in the amount of freight carried by rail"
+the truck-based system can outperform air freight at distances of up to seven hundred miles
+the Panama Canal has lost importance because of air freight
+a bill indicating that the freight has been paid
+the metals had been freighted from the city
+synonyms:	cargo, load, transportation, transport
+
+**************************************************
+15/02/2016
+
+Checkpoints show you snapshots of what’s happening in your Apex code at particular points during execution.
+
+With the Predictive Vision Service, you can harness the power of image recognition to build AI-powered apps fast
+Using the Predictive Vision Service API, you can train deep learning models to recognize and classify images. A model is a machine learning construct used to solve a classification problem
+
+**************************************************
+20/02/2017
+
+Configure Price Quote (CPQ) 
+
+prejudice: preconceived opinion that is not based on reason or actual experience.
+male prejudices about women
+
+axiom: a statement or proposition which is regarded as being established, accepted, or self-evidently true
+the axiom that sport builds character
+your data is going to help you thats an axiom
+
+delimit: determine the limits or boundaries of.
+"agreements delimiting fishing zones"
+syno: determine
+
+singularity: the state, fact, quality, or condition of being singular.
+"he believed in the singularity of all cultures"
+synonyms:	uniqueness, distinctiveness
+
+great sorrow or distress (often used hyperbolically).
+"the Everton tale of woe continued"
+synonyms:	misery, sorrow,
+**************************************************
+22/02/2016
+
+Analogy: a comparison between one thing and another, typically for the purpose of explanation or clarification
+Analogy - html is fence and css is the color you add to the fence
+
+***************************************************
+25/02/2017
+
+Excerpt: a short extract from a film, broadcast, or piece of music or writing.
+"she read out excerpts from an article in the Times"
+The book also has a lot of wonderful quotes, but out of all, this excerpt remains with me forever - ''Lifelong happiness does come through striving to realize your dreams. 
+
+A Personal Legend is your life's spiritual purpose. It's a spiritual calling that awakens a deep desire and passion to live with a sense of purpose for something greater than yourself.
+
+1) endure: suffer (something painful or difficult) patiently.
+"it seemed impossible that anyone could endure such pain"
+synonyms:	undergo, go through, 
+
+2)endure: remain in existence; last.
+"these cities have endured through time"
+synonyms:	last, live, live on
+What is “true” will always endure
+
+Sluggish: slow-moving or inactive.
+"a sluggish stream"
+synonyms:	inactive, quiet, slow, slow-moving
+How do you combat sluggish searches? By defining lean, mean, search-querying machines.
+
+Stance: the attitude of a person or organization towards something; a standpoint.
+"the party is changing its stance on Europe"
+synonyms:	attitude, stand, point of view, viewpoint, opinion,
+But if you have thousands of records, it’s time to reconsider that stance
+
+stealthy: behaving or done in a cautious and surreptitious manner, so as not to be seen or heard.
+"stealthy footsteps"
+syno: secretive
+antonym: open
+ Become a stealthy search ninja
+
+ ******************************************
+ 26/02/2016
+
+ Vogue: the prevailing fashion or style at a particular time.
+"the vogue is to make realistic films"
+synonyms:	fashion, mode, style,
+Although multi-tasking is currently in vogue, trying to accomplish more than one task at a time can actually be more harmful than helpful
+
+Elapsed time is simply the amount of time that passes from the beginning of an event to its end
+
+elapse: (of time) pass or go by.
+"weeks elapsed before anyone was charged with the attack"
+syno: pass
+
+entitlement:the amount to which a person has a right.
+"her annual leave entitlement"
+synonyms:	allowance, allocation
+The case entitlement process - the case allocation and resolution process
+
+stellar: featuring or having the quality of a star performer or performers.
+"a stellar cast had been assembled"
+exceptionally good; outstanding.
+"his restaurant has received stellar ratings in the guides"
+Since you’ve done such a stellar job adding required steps to your standard support process, it’s time to move on to the big leagues
+
+exertion: physical or mental effort.
+"she was panting with the exertion"
+synonyms:	effort, strain, struggle,
+
+1) fatigue: extreme tiredness resulting from mental or physical exertion or illness.
+"he was nearly dead with fatigue"
+synonyms:	tiredness
+
+2) fatigue: a lessening in one's response to or enthusiasm for something, caused by overexposure.
+"votes were showing signs of election fatigue"
+Milestone fatigue is a common side effect of implementing the Happy Customer policy
+
+Podcast: a digital audio file made available on the Internet for downloading to a computer or mobile device, typically available as a series, new instalments of which can be received by subscribers automatically.
+
+parmount: more important than anything else; supreme.
+"the interests of the child are of paramount importance"
+synonyms:	most important
+But this doesn’t mean that single-minded focus is not of paramount importance
+
+unanimous: (of two or more people) fully in agreement.
+"the doctors were unanimous in their diagnoses"
+synonyms:	united
+Require UNANIMOUS approval from all selected approvers.
+
+Breadcrumbs or breadcrumbs trail is a graphical control element used as a navigational aid in user interfaces. It allows users to keep track of their locations within programs, documents, or websites.
+
+Plethora: a large or excessive amount of something.
+"a plethora of committees and subcommittees"
+ For those who did not know it, please surf through and if possible, please subscribe to enjoy a plethora of learning content in almost all areas.
+
+ ******************************************
+ consent: permission for something to happen or agreement to do something.
+"no change may be made without the consent of all the partners"
+synonyms:	agreement,
+ Confirm that you consent to the lockout of this organization for a certain period of time as described below (please note that the time estimations listed are only indicative)
